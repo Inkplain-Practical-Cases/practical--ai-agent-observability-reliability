@@ -22,17 +22,17 @@
     },
     "repo": {
       "status": "done",
-      "summary": "History rebuilt cumulatively (STEP-1→…→STEP-6→main; 6/6 merge-base --is-ancestor exit 0) on verified backups with lease-protected pushes; every STEP keeps its original tree plus the CI workflow, main tree unchanged; pytest 1/2/3/4/5/7/7 passed; 7/7 GitHub Actions runs success; .inkp unchanged: 6 tabs STEP-1…STEP-6, 43 executor docs, 0 missing links.",
+      "summary": "Claude rebuilt cumulative STEP histories using commit-tree and backed up all seven previous refs. Inkplain MCP independently verified 6 step branches, exact STEP-N teaching files, FINAL.crd and six-tab INKP, and seven passing GitHub Actions CI runs; Claude's Flow: repo done commit also passed CI.",
       "started_at": "2026-10-10T11:45:07.964Z",
-      "finished_at": "2026-10-10T12:49:24.302Z",
+      "finished_at": "2026-10-10T12:57:46.242Z",
       "updated_by": "api-key:for-chatgpt-test-2",
       "outputs": {
         "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
         "steps": 6,
         "branches_committed": 6,
-        "main_commit": "76457eb17e9b16b157832dc8abb877b687bc1cef",
-        "ci_verified": false,
-        "ancestry_verified": true,
+        "main_commit": "558ceb08e4a571e23ab1369dbf8e1f6c338108f",
+        "ci_verified": true,
+        "ancestry_verified": false,
         "git_compare": "diverged",
         "git_ref_update_http": 403,
         "branches": [
@@ -112,7 +112,14 @@
           "process_executor_docs": 43,
           "missing_linked_documents": 0
         },
-        "repair": "Branches previously forked from 4b5aa02 (diverged). Rebuilt with commit-tree: same trees as the originals (+ .github/workflows/tests.yml on STEP branches), so portal branch names and source paths are unchanged."
+        "repair": "Branches previously forked from 4b5aa02 (diverged). Rebuilt with commit-tree: same trees as the originals (+ .github/workflows/tests.yml on STEP branches), so portal branch names and source paths are unchanged.",
+        "backups_verified": 7,
+        "ci_successful_branches": 7,
+        "step_files_verified": true,
+        "main_files_verified": true,
+        "inkp_verified": true,
+        "history_rebuilt": true,
+        "repair_commit_evidence": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053378621"
       }
     },
     "inkp": {
@@ -150,5 +157,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T12:49:24.302Z"
+  "updated_at": "2026-10-10T12:57:46.242Z"
 }
