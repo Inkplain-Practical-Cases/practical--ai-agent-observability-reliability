@@ -41,10 +41,18 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
         "source_file": "app/main.py",
-        "step_note": "Source file included in cumulative branch."
+        "step_note": "Source file included in cumulative branch.",
+        "qualified_symbol": "main",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     },
@@ -66,11 +74,32 @@
       },
       "inputs": [],
       "validations": [],
-      "operations": [],
-      "outputs": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Call handle_run",
+          "description": "Invoke handle_run as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.handle_run",
+            "type": "call",
+            "label": "handle_run",
+            "evidence": "app/features/feature_agent/router.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
         "source_file": "app/features/feature_agent/router.py",
-        "step_note": "Source file included in cumulative branch."
+        "step_note": "Source file included in cumulative branch.",
+        "qualified_symbol": "router",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     },
@@ -93,10 +122,18 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
         "source_file": "app/features/feature_agent/schemas/request_schema.py",
-        "step_note": "Source file included in cumulative branch."
+        "step_note": "Source file included in cumulative branch.",
+        "qualified_symbol": "request_schema",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     },
@@ -116,13 +153,40 @@
         "start_line": 1,
         "end_line": 9
       },
-      "inputs": [],
+      "inputs": [
+        {
+          "id": "body",
+          "name": "body",
+          "description": "Validated request containing a synthetic message"
+        }
+      ],
       "validations": [],
-      "operations": [],
-      "outputs": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Call service_reply",
+          "description": "Invoke service_reply as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.service_reply",
+            "type": "call",
+            "label": "service_reply",
+            "evidence": "app/features/feature_agent/handlers/handle_run.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
         "source_file": "app/features/feature_agent/handlers/handle_run.py",
-        "step_note": "Source file included in cumulative branch."
+        "step_note": "Source file included in cumulative branch.",
+        "qualified_symbol": "handle_run",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     },
@@ -142,13 +206,40 @@
         "start_line": 1,
         "end_line": 6
       },
-      "inputs": [],
+      "inputs": [
+        {
+          "id": "message",
+          "name": "message",
+          "description": "Synthetic text to classify"
+        }
+      ],
       "validations": [],
-      "operations": [],
-      "outputs": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Call fake_provider",
+          "description": "Invoke fake_provider as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.fake_provider",
+            "type": "call",
+            "label": "fake_provider",
+            "evidence": "app/features/feature_agent/services/service_reply.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
         "source_file": "app/features/feature_agent/services/service_reply.py",
-        "step_note": "Source file included in cumulative branch."
+        "step_note": "Source file included in cumulative branch.",
+        "qualified_symbol": "service_reply",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     },
@@ -171,10 +262,18 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
         "source_file": "app/providers/llm/fake_provider.py",
-        "step_note": "Source file included in cumulative branch."
+        "step_note": "Source file included in cumulative branch.",
+        "qualified_symbol": "fake_provider",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     }
