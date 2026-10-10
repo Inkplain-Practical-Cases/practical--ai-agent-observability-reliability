@@ -1,11 +1,11 @@
 {
   "crd_version": 1,
-  "name": "Reliability learning step 5",
+  "name": "Reliability learning step 6",
   "description": "Partial component inventory",
   "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-05-evaluate-alerts-and-incident-thresholds",
+    "revision": "step-06-test-reliability-and-privacy-regressions",
     "roots": {
       "backend": "app"
     },
@@ -365,11 +365,11 @@
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 5,
+    "no": 6,
     "of": 6,
-    "title": "Evaluate alerts and incident thresholds",
-    "branch": "step-05-evaluate-alerts-and-incident-thresholds",
-    "previous": "STEP-4.crd",
+    "title": "Test reliability and privacy regressions",
+    "branch": "step-06-test-reliability-and-privacy-regressions",
+    "previous": "STEP-5.crd",
     "removed": []
   }
 }
