@@ -41,11 +41,19 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/main.py"
+        "source_file": "app/main.py",
+        "qualified_symbol": "main",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.router",
@@ -65,12 +73,33 @@
       },
       "inputs": [],
       "validations": [],
-      "operations": [],
-      "outputs": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Call handle_run",
+          "description": "Invoke handle_run as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.handle_run",
+            "type": "call",
+            "label": "handle_run",
+            "evidence": "app/features/feature_agent/router.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/features/feature_agent/router.py"
+        "source_file": "app/features/feature_agent/router.py",
+        "qualified_symbol": "router",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.request_schema",
@@ -91,11 +120,19 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/features/feature_agent/schemas/request_schema.py"
+        "source_file": "app/features/feature_agent/schemas/request_schema.py",
+        "qualified_symbol": "request_schema",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.fake_provider",
@@ -116,11 +153,19 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/providers/llm/fake_provider.py"
+        "source_file": "app/providers/llm/fake_provider.py",
+        "qualified_symbol": "fake_provider",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.handle_run",
@@ -138,14 +183,53 @@
         "start_line": 1,
         "end_line": 10
       },
-      "inputs": [],
+      "inputs": [
+        {
+          "id": "body",
+          "name": "body",
+          "description": "Validated request containing a synthetic message"
+        }
+      ],
       "validations": [],
-      "operations": [],
-      "outputs": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Call service_reply",
+          "description": "Invoke service_reply as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.service_reply",
+            "type": "call",
+            "label": "service_reply",
+            "evidence": "app/features/feature_agent/handlers/handle_run.py"
+          }
+        },
+        {
+          "id": "op-2",
+          "title": "Call service_log_event",
+          "description": "Invoke service_log_event as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.service_log_event",
+            "type": "call",
+            "label": "service_log_event",
+            "evidence": "app/features/feature_agent/handlers/handle_run.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/features/feature_agent/handlers/handle_run.py"
+        "source_file": "app/features/feature_agent/handlers/handle_run.py",
+        "qualified_symbol": "handle_run",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_log_event",
@@ -166,9 +250,17 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/features/feature_agent/services/service_log_event.py"
+        "source_file": "app/features/feature_agent/services/service_log_event.py",
+        "qualified_symbol": "service_log_event",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     },
@@ -188,14 +280,53 @@
         "start_line": 1,
         "end_line": 18
       },
-      "inputs": [],
+      "inputs": [
+        {
+          "id": "message",
+          "name": "message",
+          "description": "Synthetic text to classify"
+        }
+      ],
       "validations": [],
-      "operations": [],
-      "outputs": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Call fake_provider",
+          "description": "Invoke fake_provider as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.fake_provider",
+            "type": "call",
+            "label": "fake_provider",
+            "evidence": "app/features/feature_agent/services/service_reply.py"
+          }
+        },
+        {
+          "id": "op-2",
+          "title": "Call service_log_event",
+          "description": "Invoke service_log_event as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.service_log_event",
+            "type": "call",
+            "label": "service_log_event",
+            "evidence": "app/features/feature_agent/services/service_reply.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/features/feature_agent/services/service_reply.py"
+        "source_file": "app/features/feature_agent/services/service_reply.py",
+        "qualified_symbol": "service_reply",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_alert",
@@ -216,9 +347,17 @@
       "inputs": [],
       "validations": [],
       "operations": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
       "attributes": {
-        "source_file": "app/features/feature_agent/services/service_alert.py"
+        "source_file": "app/features/feature_agent/services/service_alert.py",
+        "qualified_symbol": "service_alert",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
     }
