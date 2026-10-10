@@ -1,1 +1,1 @@
-# Package boundary for the agent observability learning service.
+# Root Python package for synthetic agent reliability lab.

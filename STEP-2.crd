@@ -1,11 +1,11 @@
 {
   "crd_version": 1,
-  "name": "Agent reliability",
-  "description": "Source-grounded component inventory for the cumulative offline teaching branch.",
-  "generated_at": "2026-10-10T11:46:00Z",
+  "name": "Reliability learning step 2",
+  "description": "Partial component inventory",
+  "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-01-trace-api-request-boundaries",
+    "revision": "step-02-emit-redacted-structured-events",
     "roots": {
       "backend": "app"
     },
@@ -15,9 +15,9 @@
   },
   "flows": [
     {
-      "id": "run-agent",
-      "name": "Run agent",
-      "description": "Handle a synthetic user request",
+      "id": "agent-run",
+      "name": "Agent run",
+      "description": "Request through API and safe provider",
       "entry": "be.router"
     }
   ],
@@ -27,10 +27,10 @@
       "name": "main",
       "kind": "function",
       "side": "backend",
-      "layer": "schema",
-      "description": "ICS door registration: FastAPI app only wires the case router.",
+      "layer": "provider",
+      "description": "Implementation described in app/main.py",
       "flows": [
-        "run-agent"
+        "agent-run"
       ],
       "source": {
         "file": "app/main.py",
@@ -50,11 +50,10 @@
       ],
       "attributes": {
         "source_file": "app/main.py",
-        "step_note": "Source file included in cumulative branch.",
         "qualified_symbol": "main",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.router",
@@ -62,15 +61,15 @@
       "kind": "function",
       "side": "backend",
       "layer": "door",
-      "description": "ICS door: accepts a validated request and delegates without business logic.",
+      "description": "Implementation described in app/features/feature_agent/router.py",
       "flows": [
-        "run-agent"
+        "agent-run"
       ],
       "source": {
         "file": "app/features/feature_agent/router.py",
         "symbol": "router",
         "start_line": 1,
-        "end_line": 10
+        "end_line": 9
       },
       "inputs": [],
       "validations": [],
@@ -97,21 +96,20 @@
       ],
       "attributes": {
         "source_file": "app/features/feature_agent/router.py",
-        "step_note": "Source file included in cumulative branch.",
         "qualified_symbol": "router",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.request_schema",
       "name": "request_schema",
       "kind": "function",
       "side": "backend",
-      "layer": "schema",
-      "description": "Input boundary: Pydantic validates each synthetic user request.",
+      "layer": "provider",
+      "description": "Implementation described in app/features/feature_agent/schemas/request_schema.py",
       "flows": [
-        "run-agent"
+        "agent-run"
       ],
       "source": {
         "file": "app/features/feature_agent/schemas/request_schema.py",
@@ -131,11 +129,43 @@
       ],
       "attributes": {
         "source_file": "app/features/feature_agent/schemas/request_schema.py",
-        "step_note": "Source file included in cumulative branch.",
         "qualified_symbol": "request_schema",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.fake_provider",
+      "name": "fake_provider",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Implementation described in app/providers/llm/fake_provider.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/providers/llm/fake_provider.py",
+        "symbol": "fake_provider",
+        "start_line": 1,
+        "end_line": 4
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
+      "attributes": {
+        "source_file": "app/providers/llm/fake_provider.py",
+        "qualified_symbol": "fake_provider",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
+      },
+      "step_change": "unchanged"
     },
     {
       "id": "be.handle_run",
@@ -143,15 +173,15 @@
       "kind": "function",
       "side": "backend",
       "layer": "handler",
-      "description": "ICS handler: assigns a trace ID and calls the business service.",
+      "description": "Implementation described in app/features/feature_agent/handlers/handle_run.py",
       "flows": [
-        "run-agent"
+        "agent-run"
       ],
       "source": {
         "file": "app/features/feature_agent/handlers/handle_run.py",
         "symbol": "handle_run",
         "start_line": 1,
-        "end_line": 9
+        "end_line": 10
       },
       "inputs": [
         {
@@ -173,6 +203,18 @@
             "label": "service_reply",
             "evidence": "app/features/feature_agent/handlers/handle_run.py"
           }
+        },
+        {
+          "id": "op-2",
+          "title": "Call service_log_event",
+          "description": "Invoke service_log_event as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.service_log_event",
+            "type": "call",
+            "label": "service_log_event",
+            "evidence": "app/features/feature_agent/handlers/handle_run.py"
+          }
         }
       ],
       "outputs": [
@@ -184,8 +226,40 @@
       ],
       "attributes": {
         "source_file": "app/features/feature_agent/handlers/handle_run.py",
-        "step_note": "Source file included in cumulative branch.",
         "qualified_symbol": "handle_run",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
+      },
+      "step_change": "changed"
+    },
+    {
+      "id": "be.service_log_event",
+      "name": "service_log_event",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Implementation described in app/features/feature_agent/services/service_log_event.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/services/service_log_event.py",
+        "symbol": "service_log_event",
+        "start_line": 1,
+        "end_line": 9
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
+      "attributes": {
+        "source_file": "app/features/feature_agent/services/service_log_event.py",
+        "qualified_symbol": "service_log_event",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
       "step_change": "added"
@@ -196,15 +270,15 @@
       "kind": "function",
       "side": "backend",
       "layer": "service",
-      "description": "ICS service: delegates the model call through an injectable offline adapter.",
+      "description": "Implementation described in app/features/feature_agent/services/service_reply.py",
       "flows": [
-        "run-agent"
+        "agent-run"
       ],
       "source": {
         "file": "app/features/feature_agent/services/service_reply.py",
         "symbol": "service_reply",
         "start_line": 1,
-        "end_line": 6
+        "end_line": 5
       },
       "inputs": [
         {
@@ -237,55 +311,20 @@
       ],
       "attributes": {
         "source_file": "app/features/feature_agent/services/service_reply.py",
-        "step_note": "Source file included in cumulative branch.",
         "qualified_symbol": "service_reply",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "added"
-    },
-    {
-      "id": "be.fake_provider",
-      "name": "fake_provider",
-      "kind": "function",
-      "side": "backend",
-      "layer": "provider",
-      "description": "Offline provider: no network calls, model keys or external services.",
-      "flows": [
-        "run-agent"
-      ],
-      "source": {
-        "file": "app/providers/llm/fake_provider.py",
-        "symbol": "fake_provider",
-        "start_line": 1,
-        "end_line": 5
-      },
-      "inputs": [],
-      "validations": [],
-      "operations": [],
-      "outputs": [
-        {
-          "id": "result",
-          "name": "result",
-          "description": "Component return value or emitted event"
-        }
-      ],
-      "attributes": {
-        "source_file": "app/providers/llm/fake_provider.py",
-        "step_note": "Source file included in cumulative branch.",
-        "qualified_symbol": "fake_provider",
-        "component_reason": "A source-defined FastAPI application boundary or operation"
-      },
-      "step_change": "added"
+      "step_change": "unchanged"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 1,
+    "no": 2,
     "of": 6,
-    "title": "Trace API request boundaries",
-    "branch": "step-01-trace-api-request-boundaries",
-    "previous": null,
+    "title": "Emit redacted structured events",
+    "branch": "step-02-emit-redacted-structured-events",
+    "previous": "STEP-1.crd",
     "removed": []
   }
 }

@@ -1,3 +1,3 @@
-# AI Agent Observability & Reliability
+# Agent Observability & Reliability
 
-Offline synthetic healthcare-admin demo in FastAPI. Follow STEP-N.md on each teaching branch, run `pip install -r requirements.txt`, `pytest -q`, then `uvicorn app.main:app`. No external credentials are needed.
+Offline FastAPI learning service with six independently runnable branch snapshots. Install with `pip install -r requirements.txt`, test with `pytest -q`, and run with `uvicorn app.main:app` (install uvicorn separately). Synthetic inputs only.

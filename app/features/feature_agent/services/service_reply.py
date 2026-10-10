@@ -1,5 +1,4 @@
-# ICS service: delegates the model call through an injectable offline adapter.
+# Offline model reply delegates to the injected provider module.
 from app.providers.llm.fake_provider import fake_provider
-async def service_reply(message: str) -> str:
-    # The fixture intentionally returns a non-sensitive constant.
+async def service_reply(message:str)->str:
     return await fake_provider(message)
