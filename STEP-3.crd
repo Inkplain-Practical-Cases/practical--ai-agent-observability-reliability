@@ -1,11 +1,11 @@
 {
   "crd_version": 1,
-  "name": "Reliability learning step 2",
+  "name": "Reliability learning step 3",
   "description": "Partial component inventory",
   "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-02-emit-redacted-structured-events",
+    "revision": "step-03-instrument-provider-and-tool-timing",
     "roots": {
       "backend": "app"
     },
@@ -229,7 +229,7 @@
         "qualified_symbol": "handle_run",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_log_event",
@@ -278,7 +278,7 @@
         "file": "app/features/feature_agent/services/service_reply.py",
         "symbol": "service_reply",
         "start_line": 1,
-        "end_line": 5
+        "end_line": 14
       },
       "inputs": [
         {
@@ -300,6 +300,18 @@
             "label": "fake_provider",
             "evidence": "app/features/feature_agent/services/service_reply.py"
           }
+        },
+        {
+          "id": "op-2",
+          "title": "Call service_log_event",
+          "description": "Invoke service_log_event as observed in the source implementation.",
+          "show": true,
+          "calls": {
+            "to": "be.service_log_event",
+            "type": "call",
+            "label": "service_log_event",
+            "evidence": "app/features/feature_agent/services/service_reply.py"
+          }
         }
       ],
       "outputs": [
@@ -314,17 +326,17 @@
         "qualified_symbol": "service_reply",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "unchanged"
+      "step_change": "changed"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 2,
+    "no": 3,
     "of": 6,
-    "title": "Emit redacted structured events",
-    "branch": "step-02-emit-redacted-structured-events",
-    "previous": "STEP-1.crd",
+    "title": "Instrument provider and tool timing",
+    "branch": "step-03-instrument-provider-and-tool-timing",
+    "previous": "STEP-2.crd",
     "removed": []
   }
 }
