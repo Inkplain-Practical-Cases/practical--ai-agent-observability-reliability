@@ -1,0 +1,211 @@
+{
+  "crd_version": 1,
+  "name": "Reliability learning step 3",
+  "description": "Partial component inventory",
+  "generated_at": "2026-10-10T11:48:00Z",
+  "source": {
+    "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
+    "revision": "step-03-instrument-provider-and-tool-timing",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "flows": [
+    {
+      "id": "agent-run",
+      "name": "Agent run",
+      "description": "Request through API and safe provider",
+      "entry": "be.router"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.main",
+      "name": "main",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Implementation described in app/main.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "main",
+        "start_line": 1,
+        "end_line": 6
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/main.py"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.router",
+      "name": "router",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "description": "Implementation described in app/features/feature_agent/router.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/router.py",
+        "symbol": "router",
+        "start_line": 1,
+        "end_line": 9
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/features/feature_agent/router.py"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.request_schema",
+      "name": "request_schema",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Implementation described in app/features/feature_agent/schemas/request_schema.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/schemas/request_schema.py",
+        "symbol": "request_schema",
+        "start_line": 1,
+        "end_line": 6
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/features/feature_agent/schemas/request_schema.py"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.fake_provider",
+      "name": "fake_provider",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Implementation described in app/providers/llm/fake_provider.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/providers/llm/fake_provider.py",
+        "symbol": "fake_provider",
+        "start_line": 1,
+        "end_line": 4
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/providers/llm/fake_provider.py"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.handle_run",
+      "name": "handle_run",
+      "kind": "function",
+      "side": "backend",
+      "layer": "handler",
+      "description": "Implementation described in app/features/feature_agent/handlers/handle_run.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/handlers/handle_run.py",
+        "symbol": "handle_run",
+        "start_line": 1,
+        "end_line": 10
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/features/feature_agent/handlers/handle_run.py"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.service_log_event",
+      "name": "service_log_event",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Implementation described in app/features/feature_agent/services/service_log_event.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/services/service_log_event.py",
+        "symbol": "service_log_event",
+        "start_line": 1,
+        "end_line": 9
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/features/feature_agent/services/service_log_event.py"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.service_reply",
+      "name": "service_reply",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Implementation described in app/features/feature_agent/services/service_reply.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/services/service_reply.py",
+        "symbol": "service_reply",
+        "start_line": 1,
+        "end_line": 14
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "source_file": "app/features/feature_agent/services/service_reply.py"
+      },
+      "step_change": "added"
+    }
+  ],
+  "dependencies": [],
+  "unresolved": [],
+  "step": {
+    "no": 3,
+    "of": 6,
+    "title": "Instrument provider and tool timing",
+    "branch": "step-03-instrument-provider-and-tool-timing",
+    "previous": "STEP-2.crd",
+    "removed": []
+  }
+}
