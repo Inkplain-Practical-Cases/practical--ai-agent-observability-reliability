@@ -1,0 +1,154 @@
+{
+  "practical_case": {
+    "id": "m1kchivsXNdbslXDCjGG",
+    "slug": "ai-agent-observability-reliability",
+    "name": "AI Agent Observability & Reliability"
+  },
+  "current": "content",
+  "stages": {
+    "intro": {
+      "status": "done",
+      "summary": "Verified Junior FDE case, skill links, seven substantive introduction sections and HTML architecture diagram; cover reused from Media Library.",
+      "started_at": "2026-10-10T09:09:08.907Z",
+      "finished_at": "2026-10-10T09:11:24.025Z",
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "outputs": {
+        "portal_url": "/practical-case/ai-agent-observability-reliability",
+        "level": "junior",
+        "skills_linked": 6,
+        "intro_sections": 7,
+        "cover_reused": true
+      }
+    },
+    "repo": {
+      "status": "done",
+      "summary": "History rebuilt cumulatively (STEP-1→…→STEP-6→main; 6/6 merge-base --is-ancestor exit 0) on verified backups with lease-protected pushes; every STEP keeps its original tree plus the CI workflow, main tree unchanged; pytest 1/2/3/4/5/7/7 passed; 7/7 GitHub Actions runs success; .inkp unchanged: 6 tabs STEP-1…STEP-6, 43 executor docs, 0 missing links.",
+      "started_at": "2026-10-10T11:45:07.964Z",
+      "finished_at": "2026-10-10T12:49:24.302Z",
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "outputs": {
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
+        "steps": 6,
+        "branches_committed": 6,
+        "main_commit": "76457eb17e9b16b157832dc8abb877b687bc1cef",
+        "ci_verified": false,
+        "ancestry_verified": true,
+        "git_compare": "diverged",
+        "git_ref_update_http": 403,
+        "branches": [
+          {
+            "branch": "step-01-trace-api-request-boundaries",
+            "sha": "ad5c101ce58755ed198a463fa5f1b8aaabc03369",
+            "original_sha": "cb53bcc",
+            "backup": "backup/pre-stage2-repair-20261010/step-01-trace-api-request-boundaries",
+            "pytest_passed": 1,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053297523",
+            "ci_conclusion": "success"
+          },
+          {
+            "branch": "step-02-emit-redacted-structured-events",
+            "sha": "7e4cf1f1605fd7e5e58d15ffe4a5c90207411bdf",
+            "original_sha": "31a80dd",
+            "backup": "backup/pre-stage2-repair-20261010/step-02-emit-redacted-structured-events",
+            "pytest_passed": 2,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053297746",
+            "ci_conclusion": "success"
+          },
+          {
+            "branch": "step-03-instrument-provider-and-tool-timing",
+            "sha": "66ac4595e1844ec343bf136507c5233f9462c366",
+            "original_sha": "2d7e0a9",
+            "backup": "backup/pre-stage2-repair-20261010/step-03-instrument-provider-and-tool-timing",
+            "pytest_passed": 3,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053297977",
+            "ci_conclusion": "success"
+          },
+          {
+            "branch": "step-04-enforce-bounded-timeout-and-retries",
+            "sha": "e37305e3d8d1f1ac746257006844ca42ae7799d3",
+            "original_sha": "25def5c",
+            "backup": "backup/pre-stage2-repair-20261010/step-04-enforce-bounded-timeout-and-retries",
+            "pytest_passed": 4,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053297371",
+            "ci_conclusion": "success"
+          },
+          {
+            "branch": "step-05-evaluate-alerts-and-incident-thresholds",
+            "sha": "c63c37219fed9a0ca38a8412d2791cd0bf43fe14",
+            "original_sha": "0845538",
+            "backup": "backup/pre-stage2-repair-20261010/step-05-evaluate-alerts-and-incident-thresholds",
+            "pytest_passed": 5,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053297754",
+            "ci_conclusion": "success"
+          },
+          {
+            "branch": "step-06-test-reliability-and-privacy-regressions",
+            "sha": "a58de1439e6029071cc5bf8e7f44da99c1781bf7",
+            "original_sha": "456dd55",
+            "backup": "backup/pre-stage2-repair-20261010/step-06-test-reliability-and-privacy-regressions",
+            "pytest_passed": 7,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053297780",
+            "ci_conclusion": "success"
+          },
+          {
+            "branch": "main",
+            "sha": "558ceb08e4a571e23ab1369dbf8e1f6c338108f8",
+            "original_sha": "446ec9d",
+            "backup": "backup/pre-stage2-repair-20261010/main",
+            "pytest_passed": 7,
+            "ci_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053298039",
+            "ci_conclusion": "success"
+          }
+        ],
+        "inkp": {
+          "tabs": [
+            "STEP-1",
+            "STEP-2",
+            "STEP-3",
+            "STEP-4",
+            "STEP-5",
+            "STEP-6"
+          ],
+          "process_executor_docs": 43,
+          "missing_linked_documents": 0
+        },
+        "repair": "Branches previously forked from 4b5aa02 (diverged). Rebuilt with commit-tree: same trees as the originals (+ .github/workflows/tests.yml on STEP branches), so portal branch names and source paths are unchanged."
+      }
+    },
+    "inkp": {
+      "status": "done",
+      "summary": "Verified six ordered STEP tabs with 27 source-derived call edges and 43 matching linked Process Executor documents; get_inkp_summary confirms zero missing linked documents. Source method-call CRDs also synchronized on GitHub.",
+      "outputs": {
+        "inkp_path": "ai-agent-observability-reliability.inkp",
+        "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/blob/main/ai-agent-observability-reliability.inkp",
+        "tabs": 6,
+        "linked_documents": 43,
+        "missing_links": 0,
+        "edges": 27
+      },
+      "started_at": "2026-10-10T11:58:38.976Z",
+      "finished_at": "2026-10-10T12:02:34.809Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "content": {
+      "status": "in_progress",
+      "summary": "8 categories and 45 lessons retained. Enhanced six component/4M lessons and added six-step code-derived CRD matrix to Project overview; read-back verified. Still needs complete pedagogical QA of 45 lessons and source-exact end-to-end walkthroughs; GitHub repo is blocked by 403 refs permission.",
+      "outputs": {
+        "categories": 8,
+        "items": 45,
+        "overview": 18,
+        "step_items": 24,
+        "conclusion": 3,
+        "structural_qa": true,
+        "content_qa": false,
+        "portal_url": "/practical-case/ai-agent-observability-reliability",
+        "component_lessons_enhanced": 6,
+        "crd_matrix": true
+      },
+      "started_at": "2026-10-10T11:58:40.753Z",
+      "finished_at": null,
+      "updated_by": "api-key:for-chatgpt-test-2"
+    }
+  },
+  "updated_at": "2026-10-10T12:49:24.302Z"
+}
