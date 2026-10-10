@@ -1,11 +1,11 @@
 {
   "crd_version": 1,
-  "name": "Reliability learning step 3",
+  "name": "Reliability learning step 4",
   "description": "Partial component inventory",
   "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-03-instrument-provider-and-tool-timing",
+    "revision": "step-04-enforce-bounded-timeout-and-retries",
     "roots": {
       "backend": "app"
     },
@@ -278,7 +278,7 @@
         "file": "app/features/feature_agent/services/service_reply.py",
         "symbol": "service_reply",
         "start_line": 1,
-        "end_line": 14
+        "end_line": 18
       },
       "inputs": [
         {
@@ -332,11 +332,11 @@
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 3,
+    "no": 4,
     "of": 6,
-    "title": "Instrument provider and tool timing",
-    "branch": "step-03-instrument-provider-and-tool-timing",
-    "previous": "STEP-2.crd",
+    "title": "Enforce bounded timeout and retries",
+    "branch": "step-04-enforce-bounded-timeout-and-retries",
+    "previous": "STEP-3.crd",
     "removed": []
   }
 }
