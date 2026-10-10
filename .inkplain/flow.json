@@ -139,7 +139,7 @@
     },
     "content": {
       "status": "in_progress",
-      "summary": "8 categories and 45 lessons retained. Enhanced six component/4M lessons and added six-step code-derived CRD matrix to Project overview; read-back verified. Still needs complete pedagogical QA of 45 lessons and source-exact end-to-end walkthroughs; GitHub repo is blocked by 403 refs permission.",
+      "summary": "QA verified 8 categories and 45 items; source walkthrough and 4M are present in sampled lessons, but Stage 4 acceptance remains incomplete: STEP-2 through STEP-6 Components lessons lack mandatory crd_tree blocks and contain generic/template component prose. Need source-specific edits and full 45-item read-back before Done.",
       "outputs": {
         "categories": 8,
         "items": 45,
@@ -150,12 +150,18 @@
         "content_qa": false,
         "portal_url": "/practical-case/ai-agent-observability-reliability",
         "component_lessons_enhanced": 6,
-        "crd_matrix": true
+        "crd_matrix": true,
+        "qa_verified_samples": 9,
+        "qa_issues": [
+          "STEP-2..STEP-6 Components 4M lessons missing crd_tree",
+          "Repeated generic 4M component wording not source specific",
+          "Full 45-item pedagogical/source-link QA not yet complete"
+        ]
       },
       "started_at": "2026-10-10T11:58:40.753Z",
       "finished_at": null,
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T12:57:46.242Z"
+  "updated_at": "2026-10-10T13:14:46.135Z"
 }
