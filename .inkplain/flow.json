@@ -39,7 +39,7 @@
       "finished_at": "2026-10-10T12:57:46.242Z",
       "started_at": "2026-10-10T11:45:07.964Z",
       "status": "done",
-      "summary": "Claude rebuilt cumulative STEP histories using commit-tree and backed up all seven previous refs. Inkplain MCP independently verified 6 step branches, exact STEP-N teaching files, FINAL.crd and six-tab INKP, and seven passing GitHub Actions CI runs; Claude's Flow: repo done commit also passed CI.",
+      "summary": "Verified six cumulative STEP branches and final main by direct GitHub compare: every adjacent pair has behind_by=0, status=ahead; step-6 to main also ahead. Existing seven successful CI runs and STEP/FINAL CRD files remain recorded.",
       "updated_by": "api-key:for-chatgpt-test-2",
       "outputs": {
         "inkp_verified": true,
@@ -118,7 +118,7 @@
         "repair": "Branches previously forked from 4b5aa02 (diverged). Rebuilt with commit-tree: same trees as the originals (+ .github/workflows/tests.yml on STEP branches), so portal branch names and source paths are unchanged.",
         "main_files_verified": true,
         "ci_verified": true,
-        "ancestry_verified": false,
+        "ancestry_verified": true,
         "inkp": {
           "tabs": [
             "STEP-1",
@@ -134,7 +134,8 @@
         "steps": 6,
         "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
         "repair_commit_evidence": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions/runs/38053378621",
-        "git_compare": "diverged"
+        "git_compare": "ahead_chain_verified",
+        "branch_pairs_verified": 6
       }
     },
     "content": {
@@ -163,5 +164,5 @@
       "started_at": "2026-10-10T11:58:40.753Z"
     }
   },
-  "updated_at": "2026-10-10T13:26:27.489Z"
+  "updated_at": "2026-10-10T14:15:30.279Z"
 }
