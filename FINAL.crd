@@ -1,11 +1,11 @@
 {
   "crd_version": 1,
-  "name": "Reliability learning step 6",
-  "description": "Partial component inventory",
+  "name": "AI Agent Observability & Reliability — final",
+  "description": "Final teaching snapshot: trace-boundary, privacy-safe telemetry, measured provider, bounded retries, and aggregate alert evaluation.",
   "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-06-test-reliability-and-privacy-regressions",
+    "revision": "main",
     "roots": {
       "backend": "app"
     },
@@ -45,7 +45,7 @@
       "attributes": {
         "source_file": "app/main.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.router",
@@ -70,7 +70,7 @@
       "attributes": {
         "source_file": "app/features/feature_agent/router.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.request_schema",
@@ -95,7 +95,7 @@
       "attributes": {
         "source_file": "app/features/feature_agent/schemas/request_schema.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.fake_provider",
@@ -120,7 +120,7 @@
       "attributes": {
         "source_file": "app/providers/llm/fake_provider.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.handle_run",
@@ -145,7 +145,7 @@
       "attributes": {
         "source_file": "app/features/feature_agent/handlers/handle_run.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_log_event",
@@ -170,7 +170,7 @@
       "attributes": {
         "source_file": "app/features/feature_agent/services/service_log_event.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_reply",
@@ -195,7 +195,7 @@
       "attributes": {
         "source_file": "app/features/feature_agent/services/service_reply.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_alert",
@@ -220,17 +220,17 @@
       "attributes": {
         "source_file": "app/features/feature_agent/services/service_alert.py"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 6,
+    "no": "final",
     "of": 6,
-    "title": "Test reliability and privacy regressions",
-    "branch": "step-06-test-reliability-and-privacy-regressions",
-    "previous": "STEP-5.crd",
+    "title": "Final reference",
+    "branch": "main",
+    "previous": "STEP-6.crd",
     "removed": []
   }
 }
