@@ -1,11 +1,11 @@
 {
   "crd_version": 1,
-  "name": "Reliability learning step 4",
+  "name": "Reliability learning step 5",
   "description": "Partial component inventory",
   "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-04-enforce-bounded-timeout-and-retries",
+    "revision": "step-05-evaluate-alerts-and-incident-thresholds",
     "roots": {
       "backend": "app"
     },
@@ -326,17 +326,50 @@
         "qualified_symbol": "service_reply",
         "component_reason": "A source-defined FastAPI application boundary or operation"
       },
-      "step_change": "changed"
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.service_alert",
+      "name": "service_alert",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Implementation described in app/features/feature_agent/services/service_alert.py",
+      "flows": [
+        "agent-run"
+      ],
+      "source": {
+        "file": "app/features/feature_agent/services/service_alert.py",
+        "symbol": "service_alert",
+        "start_line": 1,
+        "end_line": 7
+      },
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "result",
+          "description": "Component return value or emitted event"
+        }
+      ],
+      "attributes": {
+        "source_file": "app/features/feature_agent/services/service_alert.py",
+        "qualified_symbol": "service_alert",
+        "component_reason": "A source-defined FastAPI application boundary or operation"
+      },
+      "step_change": "added"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 4,
+    "no": 5,
     "of": 6,
-    "title": "Enforce bounded timeout and retries",
-    "branch": "step-04-enforce-bounded-timeout-and-retries",
-    "previous": "STEP-3.crd",
+    "title": "Evaluate alerts and incident thresholds",
+    "branch": "step-05-evaluate-alerts-and-incident-thresholds",
+    "previous": "STEP-4.crd",
     "removed": []
   }
 }
