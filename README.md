@@ -1,13 +1,7 @@
 # AI Agent Observability & Reliability
 
-This is an offline, synthetic FastAPI teaching case. It demonstrates trace IDs, telemetry allowlisting, provider latency spans, bounded timeouts/retries, alert thresholds and privacy-focused tests. No external provider key or real patient data is used.
+Offline synthetic FastAPI educational reference for trace IDs, allowlisted telemetry, provider latency, bounded retry and alert thresholds. Six cumulative STEP branches were rebuilt on 2026-10-10 with backups. GitHub Actions pytest has passed on all seven branch tips. The main branch includes FINAL.crd and the six-tab .inkp file. Install with python -m pip install -r requirements.txt and run python -m pytest -q.
 
-Install: `python -m pip install -r requirements.txt`
+POST /run accepts a synthetic tenant_id and message. No real clinical data or provider credentials.
 
-Test: `python -m pytest -q`
-
-Start server (after installing uvicorn): `uvicorn app.main:app`
-
-Send a synthetic request: `POST /run` with JSON `{"tenant_id":"demo","message":"synthetic"}`.
-
-Each step branch has STEP-N.md and STEP-N.crd. Main contains FINAL.crd. The current branch snapshots were created independently due to a restricted GitHub ref-update permission; code in later steps includes earlier capabilities, but Git ancestry is not a strict step-by-step chain. Automated CI verification is pending.
+See [CI runs](https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability/actions) and .inkplain/flow.json for flow status.
