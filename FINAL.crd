@@ -5,7 +5,7 @@
   "generated_at": "2026-10-10T11:48:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-agent-observability-reliability",
-    "revision": "step-06-test-reliability-and-privacy-regressions",
+    "revision": "main",
     "roots": {
       "backend": "app"
     },
@@ -365,11 +365,11 @@
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 6,
+    "no": "final",
     "of": 6,
-    "title": "Test reliability and privacy regressions",
-    "branch": "step-06-test-reliability-and-privacy-regressions",
-    "previous": "STEP-5.crd",
+    "title": "Final version",
+    "branch": "main",
+    "previous": "STEP-6.crd",
     "removed": []
   }
 }
