@@ -158,11 +158,17 @@
         "missing_crd_tree_fixed": 5,
         "component_tree_defaults_verified": 6,
         "inkp_tabs_verified": 6,
-        "inkp_missing_documents": 0
+        "inkp_missing_documents": 0,
+        "erd_audit_complete": true,
+        "erd_applicable_steps": [],
+        "erd_not_applicable": true,
+        "erd_lessons_created": 0,
+        "erd_item_title": "Database (Entity) Relations",
+        "erd_audit_note": "service_log_event emits redacted messages to Python logging; no configured persistent telemetry schema."
       },
-      "summary": "Published 8 categories and 45 lessons. Repaired STEP-1..STEP-6 Components CRD-tree defaults, filled missing STEP-2..STEP-6 crd_tree blocks, replaced repeated generic 4M statements with component-specific tradeoffs, separated unchanged vs changed/added CRD explanations, added FINAL.crd tree to Overview, and corrected Conclusion/Future Tasks. Read-back verified six Components lessons, representative step design/implementation/run items, and INKP six tabs with zero missing links. Full source-line semantic QA remains a separate non-blocking editorial audit.",
+      "summary": "Source-backed persistence audit completed: service_log_event emits redacted messages to Python logging; no configured persistent telemetry schema. Therefore no STEP-N.erd, ERD tabs or Database lesson is warranted.",
       "started_at": "2026-10-10T11:58:40.753Z"
     }
   },
-  "updated_at": "2026-10-10T14:15:30.279Z"
+  "updated_at": "2026-10-13T15:13:41.896Z"
 }
