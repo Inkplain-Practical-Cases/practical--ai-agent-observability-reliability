@@ -1,0 +1,66 @@
+{
+  "erd_version": 1,
+  "name": "ai-agent-observability-reliability",
+  "step": 6,
+  "engine": "sqlite",
+  "generated_from": [
+    "app/features/feature_agent/providers/provider_store_event.py",
+    "app/features/feature_agent/services/service_log_event.py"
+  ],
+  "entities": [
+    {
+      "name": "agent_traces",
+      "kind": "table",
+      "step_change": "added",
+      "description": "One identified redacted trace, with its first observed time.",
+      "source": "app/features/feature_agent/providers/provider_store_event.py",
+      "fields": [
+        {
+          "name": "trace_id",
+          "type": "TEXT",
+          "key": "PK"
+        },
+        {
+          "name": "first_seen_at",
+          "type": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "agent_events",
+      "kind": "table",
+      "step_change": "added",
+      "description": "Redacted agent telemetry events, each belonging to an existing trace.",
+      "source": "app/features/feature_agent/providers/provider_store_event.py",
+      "fields": [
+        {
+          "name": "event_id",
+          "type": "INTEGER",
+          "key": "PK"
+        },
+        {
+          "name": "trace_id",
+          "type": "TEXT",
+          "references": "agent_traces.trace_id"
+        },
+        {
+          "name": "outcome",
+          "type": "TEXT"
+        },
+        {
+          "name": "duration_ms",
+          "type": "REAL"
+        },
+        {
+          "name": "redacted",
+          "type": "INTEGER"
+        },
+        {
+          "name": "recorded_at",
+          "type": "TEXT"
+        }
+      ]
+    }
+  ],
+  "relations": []
+}
