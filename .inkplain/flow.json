@@ -160,15 +160,17 @@
         "inkp_tabs_verified": 6,
         "inkp_missing_documents": 0,
         "erd_audit_complete": true,
-        "erd_applicable_steps": [],
-        "erd_not_applicable": true,
-        "erd_lessons_created": 0,
+        "erd_applicable_steps": [
+          6
+        ],
+        "erd_not_applicable": false,
+        "erd_lessons_created": 1,
         "erd_item_title": "Database (Entity) Relations",
         "erd_audit_note": "service_log_event emits redacted messages to Python logging; no configured persistent telemetry schema."
       },
-      "summary": "Source-backed persistence audit completed: service_log_event emits redacted messages to Python logging; no configured persistent telemetry schema. Therefore no STEP-N.erd, ERD tabs or Database lesson is warranted.",
+      "summary": "Extended STEP-6 with SQLite persistent redacted agent_traces/agent_events, committed STEP-6.erd and FINAL.erd, generated STEP-6-ERD and verified portal Database (Entity) Relations position.",
       "started_at": "2026-10-10T11:58:40.753Z"
     }
   },
-  "updated_at": "2026-10-13T15:13:41.896Z"
+  "updated_at": "2026-10-13T15:44:40.799Z"
 }
